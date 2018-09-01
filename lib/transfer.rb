@@ -16,14 +16,14 @@ def execute_transaction
   if @sender.balance > @amount && status == "pending"
     @sender.balance -= @amount
     @receiver.balance += @amount
-    @status == "complete"
+    @status = "complete"
   else 
     @status = "rejected"
     return "Transaction rejected. Please check your account balance."
   end 
 
 def reverse_transfer
-  if @status == "complete"
+  if @status = "complete"
       @sender.balance += @amount
       @receiver.balance -= @amount
       @status = "reversed"
